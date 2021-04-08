@@ -1,0 +1,12 @@
+{
+    "id": "{243EF65B-B909-1070-09F1-6F7EF2EDFED4}",
+    "name": "Rueckwaertssuche11880",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "REVERSNUMBERSEARCH",
+    "url": ""
+}

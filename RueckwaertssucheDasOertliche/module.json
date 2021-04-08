@@ -1,0 +1,12 @@
+{
+    "id": "{D8A9CD14-959C-2CC0-CB1D-C29B2A4A8C93}",
+    "name": "RueckwaertssucheDasOertliche",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "REVERSNUMBERSEARCH",
+    "url": ""
+}
