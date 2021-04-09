@@ -1,12 +1,12 @@
 {
     "id": "{D0E8905A-F00C-EA84-D607-3D27000348D8}",
-    "name": "ReversNumberSearchDE",
+    "name": "Caller ID Reverse Search",
     "author": "Michael Tröger",
-    "url": "",
+    "url": "https://github.com/Nall-chan/Caller_ID_Reverse_Search/README.md",
     "compatibility": {
         "version": "5.6"
     },
     "version": "1.0",
-    "build": 0,
-    "date": 0
+    "build": 100,
+    "date": 1617981411
 }

@@ -1,0 +1,15 @@
+{
+    "id": "{ECD03F5E-6087-82D1-282E-D5D426FE57BC}",
+    "name": "RueckwaertssucheTelSearchCH",
+    "type": 0,
+    "vendor": "search.CH",
+    "aliases": [
+        "Rückwärtssuche search.CH",
+        "Inverssuche search.CH"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "CIRS",
+    "url": "https://github.com/Nall-chan/Caller_ID_Reverse_Search/RueckwaertssucheTelSearchCH/README.md"
+}

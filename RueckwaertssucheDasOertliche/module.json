@@ -1,12 +1,15 @@
 {
     "id": "{D8A9CD14-959C-2CC0-CB1D-C29B2A4A8C93}",
     "name": "RueckwaertssucheDasOertliche",
-    "type": 3,
-    "vendor": "",
-    "aliases": [],
+    "type": 0,
+    "vendor": "Das Örtliche",
+    "aliases": [
+        "Rückwärtssuche Das Örtliche",
+        "Inverssuche Das Örtliche"
+    ],
     "parentRequirements": [],
     "childRequirements": [],
     "implemented": [],
-    "prefix": "REVERSNUMBERSEARCH",
-    "url": ""
+    "prefix": "CIRS",
+    "url": "https://github.com/Nall-chan/Caller_ID_Reverse_Search/RueckwaertssucheDasOertliche/README.md"
 }

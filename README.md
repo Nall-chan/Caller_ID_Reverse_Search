@@ -1,9 +1,12 @@
-# ReversNumberSearchDE
+# Caller ID Reverse Search
 
-Folgende Module beinhaltet das ReversNumberSearchDE Repository:
+Folgende Module beinhaltet das 'Caller ID Reverse Search' Repository:  
 
-- __RueckwaertssucheDasOertliche__ ([Dokumentation](RueckwaertssucheDasOertliche))  
-	Kurze Beschreibung des Moduls.
+- __Rückwärtssuche - Das Örtliche__ ([Dokumentation](RueckwaertssucheDasOertliche/README.md))  
+	Eine Rückwärtssuche welche den Dienst von Das Örtliche verwendet.  
 
-- __Rueckwaertssuche11880__ ([Dokumentation](Rueckwaertssuche11880))  
-	Kurze Beschreibung des Moduls.
+- __Rückwaertssuche - 11880__ ([Dokumentation](Rueckwaertssuche11880/README.md))  
+	Eine Rückwärtssuche welche den Dienst von 11880 verwendet.  
+
+- __Rückwaertssuche - tel.Search.ch__ ([Dokumentation](RueckwaertssucheTelSearchCH/README.md))  
+	Eine Rückwärtssuche welche den Dienst von search.ch verwendet.  

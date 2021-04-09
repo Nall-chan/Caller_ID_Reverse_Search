@@ -1,5 +1,5 @@
-# Rückwärtssuche - 11880 <!-- omit in toc -->  
-Eine Rückwärtssuche welche den Dienst von 11880 verwendet.  
+# Rückwärtssuche - search.CH <!-- omit in toc -->  
+Eine Rückwärtssuche welche den Dienst von search.CH verwendet.  
 
 ### Inhaltsverzeichnis <!-- omit in toc -->  
 
@@ -23,7 +23,7 @@ Eine Rückwärtssuche welche den Dienst von 11880 verwendet.
 
 ### 4. Einrichten der Instanzen in IP-Symcon
 
-- Unter `Instanz hinzufügen` kann das `Rückwärtssuche 11880`-Modul mithilfe des Schnellfilters gefunden werden.  
+- Unter `Instanz hinzufügen` kann das `Rückwärtssuche search.CH`-Modul mithilfe des Schnellfilters gefunden werden.  
 - Weitere Informationen zum Hinzufügen von Instanzen in der [Dokumentation der Instanzen](https://www.symcon.de/service/dokumentation/konzepte/instanzen/#Instanz_hinzufügen)
 
 

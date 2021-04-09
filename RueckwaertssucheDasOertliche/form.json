@@ -1,5 +1,11 @@
 {
     "elements": [],
-    "actions": [],
+    "actions": [
+        {
+            "type": "Button",
+            "caption": "Clear cache",
+            "onClick": "CIRS_ClearCache($id);"
+        }
+    ],
     "status": []
 }

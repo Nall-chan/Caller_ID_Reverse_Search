@@ -1,18 +1,18 @@
 <?php
 declare(strict_types=1);
 
-eval('declare(strict_types=1);namespace Rueckwaertssuche11880 {?>' . file_get_contents(__DIR__ . '/../libs/helper/BufferHelper.php') . '}');
-eval('declare(strict_types=1);namespace Rueckwaertssuche11880 {?>' . file_get_contents(__DIR__ . '/../libs/helper/DebugHelper.php') . '}');
+eval('declare(strict_types=1);namespace RueckwaertssucheTelSearchCH {?>' . file_get_contents(__DIR__ . '/../libs/helper/BufferHelper.php') . '}');
+eval('declare(strict_types=1);namespace RueckwaertssucheTelSearchCH {?>' . file_get_contents(__DIR__ . '/../libs/helper/DebugHelper.php') . '}');
 
 require_once __DIR__.'/../libs/Cache.php';
 
 /**
  * @property TNoVarList $Cache
  */
-class Rueckwaertssuche11880 extends IPSModule
+class RueckwaertssucheTelSearchCH extends IPSModule
 {
-    use \Rueckwaertssuche11880\BufferHelper;
-    use \Rueckwaertssuche11880\DebugHelper;
+    use \RueckwaertssucheTelSearchCH\BufferHelper;
+    use \RueckwaertssucheTelSearchCH\DebugHelper;
 
     public function Create()
     {
@@ -29,6 +29,7 @@ class Rueckwaertssuche11880 extends IPSModule
 
     public function ApplyChanges()
     {
+        //Never delete this line!
         parent::ApplyChanges();
     }
     public function ClearCache()
@@ -36,7 +37,6 @@ class Rueckwaertssuche11880 extends IPSModule
         $this->Cache = new \RueckwaertssucheCache\TNoVarList();
         return true;
     }
-
     public function GetName(string $Number)
     {
         /** @var \RueckwaertssucheCache\TNoVarList $Cache */
@@ -48,41 +48,28 @@ class Rueckwaertssuche11880 extends IPSModule
             return $Name;
         }
         $this->SendDebug('Cache', 'not found', 0);
-        $Url = 'https://www.11880.com/rueckwaertssuche/'.$Number;
+        $Url = 'http://tel.search.ch/?tel='.$Number;
         $Data = @Sys_GetURLContentEx($Url, ['Timeout'=>5000]);
         if ($Data === false) {
             $this->SendDebug('ERROR', 'fetch Url', 0);
             return false;
         }
-        $TitleTag=[];
-        preg_match('/<title>(.*)<\/title>/i', $Data, $TitleTag); // minimal schneller als xpath;
-        if (sizeof($TitleTag)<=1) {
-            $this->SendDebug('ERROR', 'Title not found', 0);
+        $dom = new DOMDocument();
+        libxml_use_internal_errors(true);
+        if ($dom->loadHTML($Data) === false) {
+            $this->SendDebug('ERROR', 'parse HTML', 0);
             return false;
         }
-        $this->SendDebug('Title', $TitleTag[1], 0);
-        if (strpos($TitleTag[1], 'Telefonbuch Rückwärtssuche') !== false) {
-            $dom = new DOMDocument();
-            libxml_use_internal_errors(true);
-            $dom->loadHTML($Data);
-            if ($dom->loadHTML($Data) === false) {
-                $this->SendDebug('ERROR', 'parse HTML', 0);
-                return false;
-            }
-            $xpath = new DOMXPath($dom);
-            $NameNode = $xpath->query('/html/body/div[3]/section/div[1]/div[2]/div[1]/div[1]/div[3]/ol/li[2]/div[1]/div[1]/a/h2', null, false);
+        $xpath = new DomXPath($dom);
+        $NameNode = $xpath->query("//*[contains(concat(' ', normalize-space(@class), ' '), 'tel-detail-baseinfo')]/h1");
+        if ($NameNode->length == 0) {
+            $NameNode = $xpath->query("//*[contains(concat(' ', normalize-space(@class), ' '), 'tel-result-main')]/h1");
             if ($NameNode->length == 0) {
                 $this->SendDebug('search', 'no hit', 0);
                 return false;
             }
-            $Name = trim($NameNode->item(0)->nodeValue);
-        } else {
-            $Name = trim(explode('|', $TitleTag[1])[0]);
         }
-        if ($Name == 'Leider wurde zu dieser Suche kein Eintrag gefunden.') {
-            $this->SendDebug('search', 'no hit', 0);
-            return false;
-        }
+        $Name = trim($NameNode->item(0)->nodeValue);
         $this->SendDebug('Found Name', $Name, 0);
         if ($Name !== false) {
             $TNoVar = new \RueckwaertssucheCache\TNoVar($Number, $Name);
