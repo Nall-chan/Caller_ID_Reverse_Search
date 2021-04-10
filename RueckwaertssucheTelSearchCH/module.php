@@ -1,53 +1,12 @@
 <?php
 declare(strict_types=1);
 
-eval('declare(strict_types=1);namespace RueckwaertssucheTelSearchCH {?>' . file_get_contents(__DIR__ . '/../libs/helper/BufferHelper.php') . '}');
-eval('declare(strict_types=1);namespace RueckwaertssucheTelSearchCH {?>' . file_get_contents(__DIR__ . '/../libs/helper/DebugHelper.php') . '}');
+require_once __DIR__.'/../libs/BaseModule.php';
 
-require_once __DIR__.'/../libs/Cache.php';
-
-/**
- * @property TNoVarList $Cache
- */
-class RueckwaertssucheTelSearchCH extends IPSModule
+class RueckwaertssucheTelSearchCH extends RueckwaertssucheBase
 {
-    use \RueckwaertssucheTelSearchCH\BufferHelper;
-    use \RueckwaertssucheTelSearchCH\DebugHelper;
-
-    public function Create()
+    protected function DoSerach(string $Number)
     {
-        //Never delete this line!
-        parent::Create();
-        $this->Cache = new \RueckwaertssucheCache\TNoVarList();
-    }
-
-    public function Destroy()
-    {
-        //Never delete this line!
-        parent::Destroy();
-    }
-
-    public function ApplyChanges()
-    {
-        //Never delete this line!
-        parent::ApplyChanges();
-    }
-    public function ClearCache()
-    {
-        $this->Cache = new \RueckwaertssucheCache\TNoVarList();
-        return true;
-    }
-    public function GetName(string $Number)
-    {
-        /** @var \RueckwaertssucheCache\TNoVarList $Cache */
-        $Cache = $this->Cache;
-        $Name = $Cache->GetNameByNumber($Number);
-        if ($Name !== false) {
-            $this->SendDebug('Cache', 'found', 0);
-            $this->SendDebug('RESULT', $Name, 0);
-            return $Name;
-        }
-        $this->SendDebug('Cache', 'not found', 0);
         $Url = 'http://tel.search.ch/?tel='.$Number;
         $Data = @Sys_GetURLContentEx($Url, ['Timeout'=>5000]);
         if ($Data === false) {
@@ -71,13 +30,6 @@ class RueckwaertssucheTelSearchCH extends IPSModule
         }
         $Name = trim($NameNode->item(0)->nodeValue);
         $this->SendDebug('Found Name', $Name, 0);
-        if ($Name !== false) {
-            $TNoVar = new \RueckwaertssucheCache\TNoVar($Number, $Name);
-            $this->SendDebug('AddCache', $TNoVar, 0);
-            $Cache = $this->Cache;
-            $Cache->Add($TNoVar);
-            $this->Cache = $Cache;
-        }
         return $Name;
     }
 }

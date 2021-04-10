@@ -30,11 +30,11 @@ class TNoVar
      * Erzeugt ein neues Objekt aus TNoVar.
      *
      * @param string $Number Rufnummer
-     * @param string $Name Name
+     * @param string|bool $Name Name
      *
      * @return TNoVar Das erzeugte Objekt.
      */
-    public function __construct(string $Number, string $Name)
+    public function __construct(string $Number, $Name)
     {
         $this->Number = $Number;
         $this->Name = $Name;
@@ -84,7 +84,7 @@ class TNoVarList
     *
     * @param string $Number Die Rufnummer zu welcher der Name gesucht wird.
     *
-    * @return string|false Der Name oder false wenn nicht gefunden.
+    * @return string|NULL|false Der Name oder false wenn nicht gefunden.
     */
     public function GetNameByNumber(string $Number)
     {
@@ -93,6 +93,6 @@ class TNoVarList
                 return $TNoVar->Name;
             }
         }
-        return false;
+        return null;
     }
 }

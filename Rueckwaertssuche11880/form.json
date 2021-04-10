@@ -1,5 +1,12 @@
 {
-    "elements": [],
+    "elements": [
+        {
+            "type": "ValidationTextBox",
+            "name": "AreaCode",
+            "caption": "area code",
+            "width": "300px"
+        }
+    ],
     "actions": [
         {
             "type": "Button",

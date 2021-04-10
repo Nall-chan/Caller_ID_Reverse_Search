@@ -1,6 +1,7 @@
 {
     "translations": {
         "de": {
+            "area code": "Vorwahl",
             "Clear cache": "Cache leeren"
         }
     }
