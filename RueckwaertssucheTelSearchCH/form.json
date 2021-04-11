@@ -1,6 +1,11 @@
 {
     "elements": [
         {
+            "type": "Label",
+            "caption": "Area code is used in the search for numbers which are transferred without an area code.",
+            "width": "400px"
+        },
+        {
             "type": "ValidationTextBox",
             "name": "AreaCode",
             "caption": "area code",
@@ -8,6 +13,16 @@
         }
     ],
     "actions": [
+        {
+            "type": "ValidationTextBox",
+            "caption": "Number",
+            "name": "number"
+        },
+        {
+            "type": "Button",
+            "caption": "Search for number",
+            "onClick": "var_dump(CIRS_GetName($id,$number));"
+        },
         {
             "type": "Button",
             "caption": "Clear cache",

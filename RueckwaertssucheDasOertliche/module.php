@@ -7,6 +7,11 @@ class RueckwaertssucheDasOertliche extends RueckwaertssucheBase
 {
     protected function DoSerach(string $Number)
     {
+        $Number = str_replace('+49', '0', $Number);
+        if (strpos($Number, '0049')===0) {
+            $Number = '0'.substr($Number, 4);
+        }
+        
         $Url = 'https://www.dasoertliche.de/Controller?form_name=search_inv&ph='.$Number;
         $Data = @Sys_GetURLContentEx($Url, ['Timeout'=>5000]);
         if ($Data === false) {

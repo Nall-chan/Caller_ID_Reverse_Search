@@ -31,8 +31,10 @@ abstract class RueckwaertssucheBase extends IPSModule
     {
         /** @var \RueckwaertssucheCache\TNoVarList $Cache */
         $Cache = $this->Cache;
-        if ($Number[0] !=='0') {
-            $Number = $this->ReadPropertyString('AreaCode').$Number;
+        if ($Number[0] !=='+') {
+            if ($Number[0] !=='0') {
+                $Number = $this->ReadPropertyString('AreaCode').$Number;
+            }
         }
         $Name = $Cache->GetNameByNumber($Number);
         if ($Name !== null) {

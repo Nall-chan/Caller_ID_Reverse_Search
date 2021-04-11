@@ -1,7 +1,10 @@
 {
     "translations": {
         "de": {
+            "Area code is used in the search for numbers which are transferred without an area code.": "Vorwahl wird bei der Suche benutzt für Nummern welche ohne Vorwahl übergeben werden.",
             "area code": "Vorwahl",
+            "Number": "Nummer",
+            "Search for number": "Suche nach Nummer",
             "Clear cache": "Cache leeren"
         }
     }
