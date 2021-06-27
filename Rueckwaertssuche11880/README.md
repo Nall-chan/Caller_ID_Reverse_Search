@@ -15,7 +15,7 @@ Eine Rückwärtssuche welche den Dienst von 11880 verwendet.
 
 ### 2. Vorraussetzungen
 
-- IP-Symcon ab Version 5.6
+- IP-Symcon ab Version 6.0
 
 ### 3. Software-Installation
 
