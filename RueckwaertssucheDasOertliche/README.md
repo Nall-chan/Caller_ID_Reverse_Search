@@ -1,3 +1,10 @@
+[![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
+[![Version](https://img.shields.io/badge/Modul%20Version-1.00-blue.svg)]()
+[![Version](https://img.shields.io/badge/Symcon%20Version-6.0%20%3E-green.svg)](https://community.symcon.de/t/ip-symcon-6-0-testing/44478)  
+[![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![Check Style](https://github.com/Nall-chan/Caller_ID_Reverse_Search/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/Caller_ID_Reverse_Search/actions) [![Run Tests](https://github.com/Nall-chan/Caller_ID_Reverse_Search/workflows/Run%20Tests/badge.svg)](https://github.com/Nall-chan/Caller_ID_Reverse_Search/actions)  
+[![Spenden](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif)](../README.md#spenden)  
+
 # Rückwärtssuche - Das Örtliche <!-- omit in toc -->  
 Eine Rückwärtssuche welche den Dienst von Das Örtliche verwendet.  
 
@@ -42,7 +49,7 @@ echo CIRS_GetName(12345,'+4945130500511');
 ```  
 ---
 ```php
-null CIRS_ClearCache(integer $InstanzID);
+true CIRS_ClearCache(integer $InstanzID);
 ```
 Löscht den Cache der Instanz.  
 

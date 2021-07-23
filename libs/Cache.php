@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace RueckwaertssucheCache;
@@ -38,7 +39,7 @@ class TNoVar
     {
         $this->Number = $Number;
         $this->Name = $Name;
-        $this->Expire = time()+(86400*7); // 1 woche
+        $this->Expire = time() + (86400 * 7); // 1 woche
     }
 }
 
@@ -63,8 +64,9 @@ class TNoVarList
      */
     public function __sleep()
     {
-        $this->Items = array_filter($this->Items, function (TNoVar $Item) {
-            return ($Item->Expire > time());
+        $this->Items = array_filter($this->Items, function (TNoVar $Item)
+        {
+            return $Item->Expire > time();
         });
         return ['Items'];
     }
@@ -80,12 +82,12 @@ class TNoVarList
     }
 
     /**
-    * Liefert den Namen zu einer Nummer, wenn kein Eintrag gefunden wird, dann false.
-    *
-    * @param string $Number Die Rufnummer zu welcher der Name gesucht wird.
-    *
-    * @return string|NULL|false Der Name oder false wenn nicht gefunden.
-    */
+     * Liefert den Namen zu einer Nummer, wenn kein Eintrag gefunden wird, dann false.
+     *
+     * @param string $Number Die Rufnummer zu welcher der Name gesucht wird.
+     *
+     * @return string|NULL|false Der Name oder false wenn nicht gefunden.
+     */
     public function GetNameByNumber(string $Number)
     {
         foreach ($this->Items as $TNoVar) {
