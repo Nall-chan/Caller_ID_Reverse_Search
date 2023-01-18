@@ -4,7 +4,7 @@ Eine Rückwärtssuche welche den Dienst von 11880 verwendet.
 ### Inhaltsverzeichnis <!-- omit in toc -->  
 
 - [1. Funktionsumfang](#1-funktionsumfang)
-- [2. Vorraussetzungen](#2-vorraussetzungen)
+- [2. Voraussetzungen](#2-voraussetzungen)
 - [3. Software-Installation](#3-software-installation)
 - [4. Einrichten der Instanzen in IP-Symcon](#4-einrichten-der-instanzen-in-ip-symcon)
 - [5. PHP-Befehlsreferenz](#5-php-befehlsreferenz)
@@ -13,7 +13,7 @@ Eine Rückwärtssuche welche den Dienst von 11880 verwendet.
 
 * Stellt eine Funktion bereit um über eine Rufnummer einen Namen zu ermitteln.  
 
-### 2. Vorraussetzungen
+### 2. Voraussetzungen
 
 - IP-Symcon ab Version 6.0
 
