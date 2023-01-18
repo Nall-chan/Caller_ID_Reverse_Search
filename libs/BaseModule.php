@@ -1,10 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 eval('declare(strict_types=1);namespace Rueckwaertssuche {?>' . file_get_contents(__DIR__ . '/../libs/helper/BufferHelper.php') . '}');
 eval('declare(strict_types=1);namespace Rueckwaertssuche {?>' . file_get_contents(__DIR__ . '/../libs/helper/DebugHelper.php') . '}');
 
-require_once __DIR__.'/Cache.php';
+require_once __DIR__ . '/Cache.php';
 
 /**
  * @property TNoVarList $Cache
@@ -31,9 +32,9 @@ abstract class RueckwaertssucheBase extends IPSModule
     {
         /** @var \RueckwaertssucheCache\TNoVarList $Cache */
         $Cache = $this->Cache;
-        if ($Number[0] !=='+') {
-            if ($Number[0] !=='0') {
-                $Number = $this->ReadPropertyString('AreaCode').$Number;
+        if ($Number[0] !== '+') {
+            if ($Number[0] !== '0') {
+                $Number = $this->ReadPropertyString('AreaCode') . $Number;
             }
         }
         $Name = $Cache->GetNameByNumber($Number);

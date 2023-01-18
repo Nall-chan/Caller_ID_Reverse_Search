@@ -1,21 +1,22 @@
 <?php
+
 declare(strict_types=1);
 
-require_once __DIR__.'/../libs/BaseModule.php';
+require_once __DIR__ . '/../libs/BaseModule.php';
 
 class Rueckwaertssuche11880 extends RueckwaertssucheBase
 {
     protected function DoSerach(string $Number)
     {
-        $Url = 'https://www.11880.com/rueckwaertssuche/'.$Number;
+        $Url = 'https://www.11880.com/rueckwaertssuche/' . $Number;
         $Data = @Sys_GetURLContentEx($Url, ['Timeout'=>5000]);
         if ($Data === false) {
             $this->SendDebug('ERROR', 'fetch Url', 0);
             return false;
         }
-        $TitleTag=[];
+        $TitleTag = [];
         preg_match('/<title>(.*)<\/title>/i', $Data, $TitleTag); // minimal schneller als xpath;
-        if (sizeof($TitleTag)<=1) {
+        if (count($TitleTag) <= 1) {
             $this->SendDebug('ERROR', 'Title not found', 0);
             return false;
         }

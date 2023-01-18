@@ -1,13 +1,14 @@
 <?php
+
 declare(strict_types=1);
 
-require_once __DIR__.'/../libs/BaseModule.php';
+require_once __DIR__ . '/../libs/BaseModule.php';
 
 class RueckwaertssucheTelSearchCH extends RueckwaertssucheBase
 {
     protected function DoSerach(string $Number)
     {
-        $Url = 'http://tel.search.ch/?tel='.$Number;
+        $Url = 'http://tel.search.ch/?tel=' . $Number;
         $Data = @Sys_GetURLContentEx($Url, ['Timeout'=>5000]);
         if ($Data === false) {
             $this->SendDebug('ERROR', 'fetch Url', 0);
