@@ -3,9 +3,4 @@
     <php>
         <const name="PHPUNIT_TESTSUITE" value="true"/>
     </php>
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">../ReversNumberSearchDE</directory>
-        </whitelist>
-    </filter>
 </phpunit>
