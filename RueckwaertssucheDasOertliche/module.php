@@ -27,12 +27,18 @@ class RueckwaertssucheDasOertliche extends RueckwaertssucheBase
         }
         $xpath = new DomXPath($dom);
         $NameNode = $xpath->query("//*[contains(concat(' ', normalize-space(@class), ' '), 'st-treff-name')]");
-        if ($NameNode->length == 0) {
-            $this->SendDebug('search', 'no hit', 0);
-            return false;
+        if ($NameNode->length != 0) {
+            $Name = trim($NameNode->item(0)->nodeValue);
+            $this->SendDebug('Found Name', $Name, 0);
+            return $Name;
         }
-        $Name = trim($NameNode->item(0)->nodeValue);
-        $this->SendDebug('Found Name', $Name, 0);
-        return $Name;
+        $NameNode = $xpath->query('//*[@id="entry_1"]/h2/a');
+        if ($NameNode->length != 0) {
+            $Name = trim($NameNode->item(0)->nodeValue);
+            $this->SendDebug('Found Name', $Name, 0);
+            return $Name;
+        }
+        $this->SendDebug('NameNode', $NameNode, 0);
+        return false;
     }
 }
