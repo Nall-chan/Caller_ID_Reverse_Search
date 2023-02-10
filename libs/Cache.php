@@ -11,7 +11,7 @@ namespace RueckwaertssucheCache;
  * @copyright     2021 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
  *
- * @version       1.00
+ * @version       1.10
  *
  * @example <b>Ohne</b>
  *
@@ -50,7 +50,7 @@ class TNoVar
  * @copyright     2021 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
  *
- * @version       1.00
+ * @version       1.10
  *
  * @example <b>Ohne</b>
  * @property array $Items Enthält ein Array von TNoVar

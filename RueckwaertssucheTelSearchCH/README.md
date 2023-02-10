@@ -1,5 +1,5 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-1.00-blue.svg)]()
+[![Version](https://img.shields.io/badge/Modul%20Version-1.10-blue.svg)]()
 [![Version](https://img.shields.io/badge/Symcon%20Version-6.0%20%3E-green.svg)](https://community.symcon.de/t/ip-symcon-6-0-testing/44478)  
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Check Style](https://github.com/Nall-chan/Caller_ID_Reverse_Search/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/Caller_ID_Reverse_Search/actions) [![Run Tests](https://github.com/Nall-chan/Caller_ID_Reverse_Search/workflows/Run%20Tests/badge.svg)](https://github.com/Nall-chan/Caller_ID_Reverse_Search/actions)  
@@ -11,7 +11,7 @@ Eine Rückwärtssuche welche den Dienst von search.CH verwendet.
 ### Inhaltsverzeichnis <!-- omit in toc -->  
 
 - [1. Funktionsumfang](#1-funktionsumfang)
-- [2. Vorraussetzungen](#2-vorraussetzungen)
+- [2. Voraussetzungen](#2-voraussetzungen)
 - [3. Software-Installation](#3-software-installation)
 - [4. Einrichten der Instanzen in IP-Symcon](#4-einrichten-der-instanzen-in-ip-symcon)
 - [5. PHP-Befehlsreferenz](#5-php-befehlsreferenz)
@@ -20,7 +20,7 @@ Eine Rückwärtssuche welche den Dienst von search.CH verwendet.
 
 * Stellt eine Funktion bereit um über eine Rufnummer einen Namen zu ermitteln.  
 
-### 2. Vorraussetzungen
+### 2. Voraussetzungen
 
 - IP-Symcon ab Version 6.0
 
