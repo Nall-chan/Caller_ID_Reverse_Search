@@ -3,4 +3,9 @@
     <php>
         <const name="PHPUNIT_TESTSUITE" value="true"/>
     </php>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../Caller_ID_Reverse_Search</directory>
+        </whitelist>
+    </filter>
 </phpunit>
