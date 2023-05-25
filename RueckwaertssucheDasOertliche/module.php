@@ -6,7 +6,7 @@ require_once __DIR__ . '/../libs/BaseModule.php';
 
 class RueckwaertssucheDasOertliche extends RueckwaertssucheBase
 {
-    protected function DoSerach(string $Number)
+    protected function DoSerach(string $Number): false|string
     {
         $Number = str_replace('+49', '0', $Number);
         if (strpos($Number, '0049') === 0) {

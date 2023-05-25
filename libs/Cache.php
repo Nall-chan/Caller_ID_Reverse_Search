@@ -11,31 +11,31 @@ namespace RueckwaertssucheCache;
  * @copyright     2021 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
  *
- * @version       1.10
+ * @version       1.11
  *
  * @example <b>Ohne</b>
  *
  * @property string $Number Rufnummer
- * @property string $Name Name
+ * @property false|string $Name Name
  * @property int $Expire Timestamp
  */
 class TNoVar
 {
-    public $Number = '';
+    public string $Number = '';
 
-    public $Name = '';
+    public false|string $Name = false;
 
-    public $Expire = 0;
+    public int $Expire = 0;
 
     /**
      * Erzeugt ein neues Objekt aus TNoVar.
      *
      * @param string $Number Rufnummer
-     * @param string|bool $Name Name
+     * @param string|false $Name Name
      *
      * @return TNoVar Das erzeugte Objekt.
      */
-    public function __construct(string $Number, $Name)
+    public function __construct(string $Number, false|string $Name)
     {
         $this->Number = $Number;
         $this->Name = $Name;
@@ -50,19 +50,19 @@ class TNoVar
  * @copyright     2021 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
  *
- * @version       1.10
+ * @version       1.11
  *
  * @example <b>Ohne</b>
- * @property array $Items Enthält ein Array von TNoVar
+ * @property TNoVar[] $Items Enthält ein Array von TNoVar
  */
 class TNoVarList
 {
-    public $Items = [];
+    public array $Items = [];
 
     /**
      * Liefert die Daten welche behalten werden müssen.
      */
-    public function __sleep()
+    public function __sleep(): array
     {
         $this->Items = array_filter($this->Items, function (TNoVar $Item)
         {
@@ -76,7 +76,7 @@ class TNoVarList
      *
      * @param TNoVar $TNoVar Das hinzuzufügende Objekt.
      */
-    public function Add(TNoVar $TNoVar)
+    public function Add(TNoVar $TNoVar): void
     {
         $this->Items[] = $TNoVar;
     }
@@ -88,7 +88,7 @@ class TNoVarList
      *
      * @return string|NULL|false Der Name oder false wenn nicht gefunden.
      */
-    public function GetNameByNumber(string $Number)
+    public function GetNameByNumber(string $Number): string|false|null
     {
         foreach ($this->Items as $TNoVar) {
             if ($TNoVar->Number == $Number) {

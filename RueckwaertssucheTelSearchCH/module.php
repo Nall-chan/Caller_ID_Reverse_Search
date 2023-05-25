@@ -6,7 +6,7 @@ require_once __DIR__ . '/../libs/BaseModule.php';
 
 class RueckwaertssucheTelSearchCH extends RueckwaertssucheBase
 {
-    protected function DoSerach(string $Number)
+    protected function DoSerach(string $Number): false|string
     {
         $Url = 'http://tel.search.ch/?tel=' . $Number;
         $Data = @Sys_GetURLContentEx($Url, ['Timeout'=>5000]);

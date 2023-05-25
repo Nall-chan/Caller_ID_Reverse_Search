@@ -6,7 +6,7 @@ require_once __DIR__ . '/../libs/BaseModule.php';
 
 class Rueckwaertssuche11880 extends RueckwaertssucheBase
 {
-    protected function DoSerach(string $Number)
+    protected function DoSerach(string $Number): false|string
     {
         $Url = 'https://www.11880.com/rueckwaertssuche/' . $Number;
         $Data = @Sys_GetURLContentEx($Url, ['Timeout'=>5000]);
