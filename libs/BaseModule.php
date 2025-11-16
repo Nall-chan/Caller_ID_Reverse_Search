@@ -23,12 +23,14 @@ abstract class RueckwaertssucheBase extends IPSModuleStrict
         $this->RegisterPropertyString('AreaCode', '');
         $this->Cache = new \RueckwaertssucheCache\TNoVarList();
     }
+
     public function ClearCache(): bool
     {
         $this->SendDebug('Clear cache bytes', strlen(serialize($this->Cache)), 0);
         $this->Cache = new \RueckwaertssucheCache\TNoVarList();
         return true;
     }
+
     public function GetName(string $Number): false|string
     {
         $Cache = $this->Cache;
@@ -52,5 +54,6 @@ abstract class RueckwaertssucheBase extends IPSModuleStrict
         $this->Cache = $Cache;
         return $Name;
     }
+
     abstract protected function DoSerach(string $Number): false|string;
 }
